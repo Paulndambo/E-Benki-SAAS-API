@@ -28,6 +28,9 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
 
+urlpatterns = urlpatterns + \
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 admin.site.site_header = "E-BENKI SERVICE API"
 admin.site.site_title = "E-BENKI SERVICE API"
 admin.site.index_title = "E-BENKI SERVICE API"
