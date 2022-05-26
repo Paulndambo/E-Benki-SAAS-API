@@ -21,6 +21,7 @@ MarkupSafe
 oauthlib
 packaging
 phonenumbers
+pillow
 pycparser
 PyJWT
 pyparsing
