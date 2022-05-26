@@ -36,3 +36,4 @@ social-auth-core
 sqlparse
 uritemplate
 urllib3
+django-cors-headers
