@@ -4,7 +4,7 @@ from core.models import Branch, AbstractBaseModel
 # Create your models here.
 ACCOUNT_TYPES = (
     ("savings", "Savings Account"),
-    ("checkig", "Checking Account"),
+    ("checking", "Checking Account"),
 )
 
 class Account(AbstractBaseModel):

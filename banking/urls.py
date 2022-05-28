@@ -8,4 +8,7 @@ router.register("transactions", views.TransactionViewSet, basename="transactions
 
 urlpatterns = [ 
     path("", include(router.urls)),
+    path("customer-deposit/", views.CustomerDepositAPIView.as_view(), name="customer-deposit"),
+    path("customer-withdraw/", views.CustomerWithdrawAPIView.as_view(), name="customer-withdraw"),
+    path("money-transfer/", views.MoneyTransferAPIView.as_view(), name="money-transfer"),
 ]

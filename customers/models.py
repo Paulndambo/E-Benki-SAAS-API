@@ -20,7 +20,7 @@ class Customer(AbstractBaseModel):
     town = models.CharField(max_length=200)
     country = CountryField()
     photo = models.ImageField(upload_to="customer_images")
-    scanned_id = models.ImageField(upload_to="scanned_ids")
+    scanned_id = models.FileField(upload_to="scanned_ids")
     branch = models.ForeignKey(to="core.Branch", on_delete=models.DO_NOTHING)
 
     def __str__(self):
