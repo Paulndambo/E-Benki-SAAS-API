@@ -2,6 +2,9 @@ from django.db import models
 from core.models import AbstractBaseModel
 from django_countries.fields import CountryField
 from phonenumber_field.modelfields import PhoneNumberField
+from django.db.models.signals import post_save, pre_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
 # Create your models here.
 GENDER_CHOICES = (
     ("male", "Male"),
@@ -51,4 +54,14 @@ class CustomerEmployment(AbstractBaseModel):
     def __str__(self):
         return self.title
 
-    
+@receiver(post_save, sender=Customer)
+def create_customer_user(sender, instance, **kwargs):
+    if instance.email:
+        email = instance.email
+        username = instance.id_number
+        password = "1234"
+        user = User()
+        user.email = email
+        user.username = username
+        user.set_password(password)
+        user.save()

@@ -84,3 +84,8 @@ class MoneyTransferAPIView(generics.GenericAPIView):
         receiver.save()
 
         return Response(serializer.data)
+
+
+class AccountTransactionsAPIView(generics.GenericAPIView):
+    queryset = Transaction.objects.all()
+    
