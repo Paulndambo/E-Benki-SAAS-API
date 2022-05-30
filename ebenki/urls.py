@@ -25,6 +25,7 @@ urlpatterns = [
     path("core/", include("core.urls")),
     path("customer/", include("customers.urls")),
     path("banking/", include("banking.urls")),
+    path("loans/", include("loans.urls")),
     path("", schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
