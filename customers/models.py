@@ -54,6 +54,7 @@ class CustomerEmployment(AbstractBaseModel):
     def __str__(self):
         return self.title
 
+
 @receiver(post_save, sender=Customer)
 def create_customer_user(sender, instance, **kwargs):
     if instance.email:
